@@ -20,6 +20,16 @@ class HomeScreen extends StatelessWidget{
         backgroundColor: Colors.orange,
         title: Text('S 라인 블로그'),
         centerTitle: true,
+
+        actions: [
+          IconButton(
+              onPressed : (){
+                webViewController.loadRequest(Uri.parse('https://velog.io/@hubgood98/posts'));
+                },
+              icon: Icon(Icons.home,
+              ),
+          ),
+        ],
       ),
 
       body: WebViewWidget(
