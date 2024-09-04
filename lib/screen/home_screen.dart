@@ -20,7 +20,16 @@ class HomeScreen extends StatelessWidget{
         backgroundColor: Colors.orange,
         title: Text('S 라인 블로그'),
         centerTitle: true,
-
+        leading: IconButton(
+            onPressed: () async{
+              if(await webViewController.canGoBack()){
+                webViewController.goBack(); //뒤로가기
+              }else
+                {
+                  Navigator.pop(context); //앱 내에서 뒤로가기
+                }
+            }, icon: Icon(Icons.arrow_back),
+        ),
         actions: [
           IconButton(
               onPressed : (){
